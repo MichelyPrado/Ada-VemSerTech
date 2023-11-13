@@ -5,7 +5,7 @@
 //Ternário
 const numero = Number(prompt("Digite um número"))
 
-const par_impar = (numero % 2 == 0) ? console.log("É par!") : console.log("É ímpar");
+const parImpar = (numero % 2 == 0) ? console.log("É par!") : console.log("É ímpar");
 
 
 // If/else
@@ -46,7 +46,7 @@ const numeroTres = Number(prompt("Digite o terceiro número"))
 
 if (numeroUm > numeroDois && numeroUm > numeroTres) {
     console.log("O maior número é o " + numeroUm)
-} else if (numeroDois > numeroUm && numeroDois > numeroTres) {
+} else if (numeroDois > numeroTres) {
     console.log("O maior número é o " + numeroDois)
 } else if (numeroTres > numeroUm && numeroTres > numeroDois) {
     console.log("O maior número é o " + numeroTres)
