@@ -71,9 +71,6 @@ function calculadora(numero1, numero2, operador){
   console.log(calculadora(20, 2, "*"))
   console.log(calculadora(20, 2, "/"))
 
-************ imprimindo undefined
-
-
 
 
 // 02- Crie uma aplicação que simula operações bancárias simples, como depósito, saque e consulta de saldo. Utilize funções para realizar essas operações e um loop para permitir que o usuário execute várias transações.
@@ -232,18 +229,6 @@ console.log(somaArrayMinMax(lista))
 //02 - Detalhe da escada: Esta é uma escada de tamanho n=4
 // sua base e altura são iguais a n. É desenhado usando # símbolos e espaços. A última linha não é precedida por nenhum espaço. Escreva um programa que imprima uma escada do tamanho.
 
-// function desenharEscada(n) {
-//     for (let i = 1; i <= n; i++) {
-//         // Adiciona os espaços à esquerda
-//         let espacos = ' '.repeat(n - i);
-
-//         // Adiciona os "#" do degrau
-//         let degraus = '#'.repeat(i);
-
-//         // Imprime a linha da escada
-//         console.log(espacos + degraus);
-//     }
-// }
 
 function desenharEscada(n) {
     for (let count = 1; count <= n; count++) {
