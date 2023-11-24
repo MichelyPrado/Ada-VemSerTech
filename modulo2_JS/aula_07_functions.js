@@ -194,6 +194,8 @@ function jogar() {
 jogar();
 
 
+//alert inves de mostrar tab no console log, jogar no alert
+
 ///////////////////////////////////////////////////////////LÓGICA 01 E 02//////////////////////////////////////////////////////
 // 01 - Dados cinco números inteiros positivos, encontre os valores mínimo e máximo que podem ser calculados somando exatamente quatro dos cinco números inteiros. Em seguida, imprima os respectivos valores mínimo e máximo como uma única linha de dois inteiros longos separados por espaço.
 
@@ -249,3 +251,113 @@ desenharEscada(5);
 
 
 
+//****************************************************EXERCÍCIOS COM TRY CATCH************************************************************************/
+
+//FUNÇÃO DOS OPERADORES MATEMÁTICOS 
+function soma(numero1, numero2){
+    return numero1 + numero2;
+}
+
+function subtracao(numero1, numero2){
+    return numero1 - numero2;
+}
+
+function multiplicacao(numero1, numero2) {
+    return numero1 * numero2;
+}
+
+function divisao(numero1, numero2) {
+    return numero1 / numero2;
+}
+
+    function calculadora(numero1, numero2, operador){
+    try {
+    if ( operador === '+'){
+        return soma(numero1, numero2)
+    }
+    if ( operador === '-'){
+        return subtracao(numero1, numero2)
+    }
+    if ( operador === '*'){
+        return multiplicacao(numero1, numero2)
+    }
+    if ( operador === '/'){
+        return divisao(numero1, numero2)
+    }
+    } catch (error) {
+    console.log('nao foi possivel realizar', error)
+    }
+}
+  console.log(calculadora(20, 2, "+"))
+  console.log(calculadora(20, 2, "-"))
+  console.log(calculadora(20, 2, ""))
+  console.log(calculadora(20, 2, "/"))
+  
+
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  //FUNÇÃO DAS TRANSAÇÕES BANCÁRIAS 
+
+let saldo = 10;
+
+function deposito(valor) {
+    if(valor > 0 && typeof(valor) === 'number') {
+        saldo += valor;
+        console.log(`deposito de R$${valor} realizado`);
+    } else {
+        throw new Error('Não é possivel realizar um deposito. Tente novamente!')
+    }
+}
+
+function saque(valor) {
+  if (valor <= saldo) {
+    saldo -= valor;
+    console.log(`saque de R$${valor} realizado`);
+  } else {
+    throw new Error('Saldo insuficiente, operação nao realizada')
+  }
+}
+
+function consultarSaldo() {
+  console.log(`seu saldo atual é de R$${saldo}`);
+}
+
+let pare = true
+
+while (pare) {
+  let operacao = prompt('escolha a operação desejada: 1 - depósito 2 - saque 3 - consultar Saldo 4 - sair');
+  
+
+  try {
+      switch (operacao) {
+        case '1':
+          let valorDeposito = parseFloat(prompt('digite o valor do deposito:'));
+          deposito(valorDeposito);
+          break;
+
+        case '2':
+          let valorSaque = parseFloat(prompt('digite o valor do saque:'));
+          saque(valorSaque);
+          break;
+
+        case '3':
+          consultarSaldo();
+          break;
+
+        case '4':
+          break;
+
+        default:
+          console.log('selecione uma opção valida');
+          break;
+      }
+  } catch (error) {
+    console.log(error)
+  } finally {
+    operacao = null
+    pare = false
+  }
+
+  if (operacao === '4') {
+    break;
+  }
+}
